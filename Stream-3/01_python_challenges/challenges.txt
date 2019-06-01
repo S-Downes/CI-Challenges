@@ -1,0 +1,143 @@
+﻿Challenge 1
+
+.	
+
+- Modify one of the asserts to make it fail.
+- Add more tests until you are confident that the code is correct.
+
+- Test the following version of the function and see if it is correct:
+
+    
+
+	def count_upper_case(message):
+        
+		return sum([1 for c in message if c.isupper()]) 
+
+	
+_______________________________________________________
+
+
+
+Challenge 2
+
+.
+
+Write a function that accepts a list of numbers and returns True if the list contains an even number of even numbers.
+
+
+
+Here are some tests that might suffice for testing our new function.
+
+	
+assert even_number_of_evens([]) == False, "No numbers"
+assert even_number_of_evens([2]) == False, "One even number"
+	
+assert even_number_of_evens([2, 4]) == True, "Two even numbers"
+assert even_number_of_evens([2, 3]) == False, "Two numbers, only one even"
+
+	assert even_number_of_evens([2, 3, 9, 10, 13, 7, 8]) == False, "Multiple numbers, three are even"
+assert even_number_of_evens([2, 3, 9, 10, 13, 7, 8, 5, 12]) == True, "Multiple numbers, four are even"
+assert even_number_of_evens([1, 3, 9]) == False, "No even numbers" 
+
+	________________________________________________________________________
+
+
+
+Challenge 3.
+
+
+
+Write some tests that fail the test_not_equal, and test_is_in test methods. Verify that the message is correct for the values given.
+    
+    
+
+Write test methods for test_not_in which tests than an item is not in a collection, and test_between which tests that a value is between a lower and upper limit, inclusive.
+    
+    Challenge 3.3
+    Put your test methods in a python file called byotest.py (byo stands for 'build your own'). You should now be able to import byotest when you want to write tests. 
+
+We will use your new test framework in the upcoming Mini Project.
+
+
+
+
+Challenge 4.
+
+    
+
+Change the function so that instead of a list of coins, the function works with a dictionary that contains the coin denominations, and the quantity of each coin available. By default assume there are 20 of each coin, but this can be overridden by passing a dictionary to the function as with the previous example.
+
+If a coin that would normally be used to make change isn't available the program should attempt to use smaller coins to make up the change.
+    
+If it is not possible to make the change with the coins available, the function should raise an error.
+
+    
+
+Challenge 5.
+
+Think about how you could write a test that checks if a particular error is raised. What kind of problems does that cause?
+   
+
+
+Challenge 6.
+
+
+
+Experiment with the "w+" access mode. Write some example code to understand how it works.
+
+    
+
+Challenge 7
+.    
+
+Create a sample file consisting of four lines of text.
+ Using the r+ mode, overwrite the first line. Then, move the file cursor to overwrite the third line. Finally, append a line to the file.
+
+
+
+
+
+Challenge 8. (See boggle-solver project)
+
+
+
+Change the program so that it works with a 2 by 2 grid, and then again with a 3 by 3 grid. Use a stopwatch to get an approximate idea of the difference in time taken to run. Now, estimate (or just take a wild guess) how long you think a 4 by 4 grid would take. In the next module, we'll see if you're right.
+
+
+Refactor the main function to extract the code for displaying the words and put it in a method called display_words.
+
+
+
+Challenge 9. (See company-of-dwarves project)
+    
+    
+
+Ensure the content is present for all of the following:
+
+
+
+	Thorin Oakenshield
+
+	Kili & Fili
+
+	Óin
+	
+	Gloin
+
+	Balin
+
+	Dwalin
+
+	Ori
+
+	Dori
+
+	Nori
+
+	Bifur
+
+	Bofur
+
+	Bombur
+
+	Gandalf

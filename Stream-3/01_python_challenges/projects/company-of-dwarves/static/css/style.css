@@ -1,0 +1,14 @@
+/* Image Styles */
+
+.frame {
+    /*position: relative;*/
+}
+
+.col-md-5 img {
+    width: 100%;
+    /*margin: 0;*/
+    /*max-height: 100%;*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*transform: translate(0, -50%)*/
+}
