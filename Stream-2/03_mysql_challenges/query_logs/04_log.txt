@@ -1,0 +1,172 @@
+mysql> use Chinook;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> exit
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Friends           |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+12 rows in set (0.00 sec)
+
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| jim  |   27 | 1991-02-06 23:04:56 |
+| john |   21 | 1990-02-06 23:04:56 |
+| jim  |   56 | 1955-05-09 13:12:45 |
+| fred |  100 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| jim  |   27 | 1991-02-06 23:04:56 |
+| john |   21 | 1990-02-06 23:04:56 |
+| jim  |   27 | 1955-05-09 13:12:45 |
+| fred |  100 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| jim  |   27 | 1991-02-06 23:04:56 |
+| john |   28 | 1990-02-06 23:04:56 |
+| jim  |   27 | 1955-05-09 13:12:45 |
+| fred |  106 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| jim  |   27 | 1991-02-06 23:04:56 |
+| john |   28 | 1990-02-06 23:04:56 |
+| jim  |   62 | 1955-05-09 13:12:45 |
+| fred |  106 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| Jim  |   27 | 1991-02-06 23:04:56 |
+| John |   28 | 1990-02-06 23:04:56 |
+| Jim  |   62 | 1955-05-09 13:12:45 |
+| Fred |  106 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> use Chinook;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Friends           |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+12 rows in set (0.01 sec)
+
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| John |   28 | 1990-02-06 23:04:56 |
+| Jim  |   62 | 1955-05-09 13:12:45 |
+| Fred |  106 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> Select * from Friends;
++------+------+---------------------+
+| name | age  | DOB                 |
++------+------+---------------------+
+| Fred |  106 | 1911-09-12 01:01:01 |
++------+------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Friends           |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+12 rows in set (0.00 sec)
+
+mysql> Select * from Friends;
+Empty set (0.00 sec)
+
+mysql> no tee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'no tee' at line 1
+mysql> notee;

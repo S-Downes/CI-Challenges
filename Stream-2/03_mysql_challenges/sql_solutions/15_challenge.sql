@@ -1,0 +1,1 @@
+Select Min(BirthDate) from Employee;

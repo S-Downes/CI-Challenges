@@ -1,0 +1,1 @@
+Select MediaType.Name, Track.Name from MediaType Inner Join Track On MediaType.MediaTypeId = Track.MediaTypeId Limit 10;

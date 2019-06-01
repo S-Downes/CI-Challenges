@@ -1,0 +1,194 @@
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> desc Genre;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| GenreId | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Name    | varchar(120) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+2 rows in set (0.01 sec)
+
+mysql> source test_one.sql
++----------+
+| count(*) |
++----------+
+|    87575 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> source test_one.sql
++----------+
+| count(*) |
++----------+
+|    87575 |
++----------+
+1 row in set (0.00 sec)
+
++------+----------+
+| name | count(*) |
++------+----------+
+| Rock |    87575 |
++------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from Artist limit 5;
++----------+-------------------+
+| ArtistId | Name              |
++----------+-------------------+
+|        1 | AC/DC             |
+|        2 | Accept            |
+|        3 | Aerosmith         |
+|        4 | Alanis Morissette |
+|        5 | Alice In Chains   |
++----------+-------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Album limit 5;
++---------+---------------------------------------+----------+
+| AlbumId | Title                                 | ArtistId |
++---------+---------------------------------------+----------+
+|       1 | For Those About To Rock We Salute You |        1 |
+|       2 | Balls to the Wall                     |        2 |
+|       3 | Restless and Wild                     |        2 |
+|       4 | Let There Be Rock                     |        1 |
+|       5 | Big Ones                              |        3 |
++---------+---------------------------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> select Artist.Name, Artist.Id, Album.Title from Album Join Artist On Album.ArtistId = Artist.ArtistId limit 5;
+ERROR 1054 (42S22): Unknown column 'Artist.Id' in 'field list'
+mysql> select Artist.Name, Artist.ArtistId, Album.Title from Album Join Artist On Album.ArtistId = Artist.ArtistId limit 5;
++-----------+----------+---------------------------------------+
+| Name      | ArtistId | Title                                 |
++-----------+----------+---------------------------------------+
+| AC/DC     |        1 | For Those About To Rock We Salute You |
+| AC/DC     |        1 | Let There Be Rock                     |
+| Accept    |        2 | Balls to the Wall                     |
+| Accept    |        2 | Restless and Wild                     |
+| Aerosmith |        3 | Big Ones                              |
++-----------+----------+---------------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tables' at line 1
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> Insert Into Genre (Name) Values('Trad');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Select Last_Insert_Id();
++------------------+
+| Last_Insert_Id() |
++------------------+
+|               26 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> Update Genre Set Name = 'Traditional' Where Name = 'Trad';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> Select * from Genre;
++---------+--------------------+
+| GenreId | Name               |
++---------+--------------------+
+|       1 | Rock               |
+|       2 | Jazz               |
+|       3 | Metal              |
+|       4 | Alternative & Punk |
+|       5 | Rock And Roll      |
+|       6 | Blues              |
+|       7 | Latin              |
+|       8 | Reggae             |
+|       9 | Pop                |
+|      10 | Soundtrack         |
+|      11 | Bossa Nova         |
+|      12 | Easy Listening     |
+|      13 | Heavy Metal        |
+|      14 | R&B/Soul           |
+|      15 | Electronica/Dance  |
+|      16 | World              |
+|      17 | Hip Hop/Rap        |
+|      18 | Science Fiction    |
+|      19 | TV Shows           |
+|      20 | Sci Fi & Fantasy   |
+|      21 | Drama              |
+|      22 | Comedy             |
+|      23 | Alternative        |
+|      24 | Classical          |
+|      25 | Opera              |
+|      26 | Traditional        |
++---------+--------------------+
+26 rows in set (0.00 sec)
+
+mysql> Delete from Genre Where Name = 'Traditional';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Select * from Genre;
++---------+--------------------+
+| GenreId | Name               |
++---------+--------------------+
+|       1 | Rock               |
+|       2 | Jazz               |
+|       3 | Metal              |
+|       4 | Alternative & Punk |
+|       5 | Rock And Roll      |
+|       6 | Blues              |
+|       7 | Latin              |
+|       8 | Reggae             |
+|       9 | Pop                |
+|      10 | Soundtrack         |
+|      11 | Bossa Nova         |
+|      12 | Easy Listening     |
+|      13 | Heavy Metal        |
+|      14 | R&B/Soul           |
+|      15 | Electronica/Dance  |
+|      16 | World              |
+|      17 | Hip Hop/Rap        |
+|      18 | Science Fiction    |
+|      19 | TV Shows           |
+|      20 | Sci Fi & Fantasy   |
+|      21 | Drama              |
+|      22 | Comedy             |
+|      23 | Alternative        |
+|      24 | Classical          |
+|      25 | Opera              |
++---------+--------------------+
+25 rows in set (0.00 sec)
+
+mysql> no tee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'no tee' at line 1
+mysql> notee;

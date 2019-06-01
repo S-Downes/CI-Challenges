@@ -1,0 +1,753 @@
+mysql> use Chinook;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_ten.sql
++------------+----------+-----------+---------------------+
+| EmployeeId | LastName | FirstName | HireDate            |
++------------+----------+-----------+---------------------+
+|          8 | Callahan | Laura     | 2004-03-04 00:00:00 |
+|          7 | King     | Robert    | 2004-01-02 00:00:00 |
+|          5 | Johnson  | Steve     | 2003-10-17 00:00:00 |
+|          6 | Mitchell | Michael   | 2003-10-17 00:00:00 |
+|          4 | Park     | Margaret  | 2003-05-03 00:00:00 |
+|          1 | Adams    | Andrew    | 2002-08-14 00:00:00 |
+|          2 | Edwards  | Nancy     | 2002-05-01 00:00:00 |
+|          3 | Peacock  | Jane      | 2002-04-01 00:00:00 |
++------------+----------+-----------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_ten.sql
++------------+----------+-----------+---------------------+
+| EmployeeId | LastName | FirstName | HireDate            |
++------------+----------+-----------+---------------------+
+|          1 | Adams    | Andrew    | 2002-08-14 00:00:00 |
+|          2 | Edwards  | Nancy     | 2002-05-01 00:00:00 |
+|          3 | Peacock  | Jane      | 2002-04-01 00:00:00 |
+|          4 | Park     | Margaret  | 2003-05-03 00:00:00 |
+|          5 | Johnson  | Steve     | 2003-10-17 00:00:00 |
+|          6 | Mitchell | Michael   | 2003-10-17 00:00:00 |
+|          7 | King     | Robert    | 2004-01-02 00:00:00 |
+|          8 | Callahan | Laura     | 2004-03-04 00:00:00 |
++------------+----------+-----------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_ten.sql
++------------+----------+-----------+---------------------+
+| EmployeeId | LastName | FirstName | HireDate            |
++------------+----------+-----------+---------------------+
+|          8 | Callahan | Laura     | 2004-03-04 00:00:00 |
+|          7 | King     | Robert    | 2004-01-02 00:00:00 |
+|          6 | Mitchell | Michael   | 2003-10-17 00:00:00 |
+|          5 | Johnson  | Steve     | 2003-10-17 00:00:00 |
+|          4 | Park     | Margaret  | 2003-05-03 00:00:00 |
+|          3 | Peacock  | Jane      | 2002-04-01 00:00:00 |
+|          2 | Edwards  | Nancy     | 2002-05-01 00:00:00 |
+|          1 | Adams    | Andrew    | 2002-08-14 00:00:00 |
++------------+----------+-----------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> Select * from Customer Limit 10;
++------------+------------+--------------+---------------------------------------------------+---------------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+| CustomerId | FirstName  | LastName     | Company                                           | Address                               | City                  | State | Country        | PostalCode | Phone              | Fax                | Email                    | SupportRepId |
++------------+------------+--------------+---------------------------------------------------+---------------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+|          1 | Luís       | Gonçalves    | Embraer - Empresa Brasileira de Aeronáutica S.A.  | Av. Brigadeiro Faria Lima, 2170       | São José dos Campos   | SP    | Brazil         | 12227-000  | +55 (12) 3923-5555 | +55 (12) 3923-5566 | luisg@embraer.com.br     |            3 |
+|          2 | Leonie     | Köhler       | NULL                                              | Theodor-Heuss-Straße 34               | Stuttgart             | NULL  | Germany        | 70174      | +49 0711 2842222   | NULL               | leonekohler@surfeu.de    |            5 |
+|          3 | François   | Tremblay     | NULL                                              | 1498 rue Bélanger                     | Montréal              | QC    | Canada         | H2G 1A7    | +1 (514) 721-4711  | NULL               | ftremblay@gmail.com      |            3 |
+|          4 | Bjørn      | Hansen       | NULL                                              | Ullevålsveien 14                      | Oslo                  | NULL  | Norway         | 0171       | +47 22 44 22 22    | NULL               | bjorn.hansen@yahoo.no    |            4 |
+|          5 | František  | Wichterlová  | JetBrains s.r.o.                                  | Klanova 9/506                         | Prague                | NULL  | Czech Republic | 14700      | +420 2 4172 5555   | +420 2 4172 5555   | frantisekw@jetbrains.com |            4 |
+|          6 | Helena     | Holý         | NULL                                              | Rilská 3174/6                         | Prague                | NULL  | Czech Republic | 14300      | +420 2 4177 0449   | NULL               | hholy@gmail.com          |            5 |
+|          7 | Astrid     | Gruber       | NULL                                              | Rotenturmstraße 4, 1010 Innere Stadt  | Vienne                | NULL  | Austria        | 1010       | +43 01 5134505     | NULL               | astrid.gruber@apple.at   |            5 |
+|          8 | Daan       | Peeters      | NULL                                              | Grétrystraat 63                       | Brussels              | NULL  | Belgium        | 1000       | +32 02 219 03 03   | NULL               | daan_peeters@apple.be    |            4 |
+|          9 | Kara       | Nielsen      | NULL                                              | Sønder Boulevard 51                   | Copenhagen            | NULL  | Denmark        | 1720       | +453 3331 9991     | NULL               | kara.nielsen@jubii.dk    |            4 |
+|         10 | Eduardo    | Martins      | Woodstock Discos                                  | Rua Dr. Falcão Filho, 155             | São Paulo             | SP    | Brazil         | 01007-010  | +55 (11) 3033-5446 | +55 (11) 3033-4564 | eduardo@woodstock.com.br |            4 |
++------------+------------+--------------+---------------------------------------------------+---------------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+10 rows in set (0.00 sec)
+
+mysql> Select * from Invoice Limit 10;
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress           | BillingCity | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+|         1 |          2 | 2009-01-01 00:00:00 | Theodor-Heuss-Straße 34  | Stuttgart   | NULL         | Germany        | 70174             |  1.98 |
+|         2 |          4 | 2009-01-02 00:00:00 | Ullevålsveien 14         | Oslo        | NULL         | Norway         | 0171              |  3.96 |
+|         3 |          8 | 2009-01-03 00:00:00 | Grétrystraat 63          | Brussels    | NULL         | Belgium        | 1000              |  5.94 |
+|         4 |         14 | 2009-01-06 00:00:00 | 8210 111 ST NW           | Edmonton    | AB           | Canada         | T6G 2C7           |  8.91 |
+|         5 |         23 | 2009-01-11 00:00:00 | 69 Salem Street          | Boston      | MA           | USA            | 2113              | 13.86 |
+|         6 |         37 | 2009-01-19 00:00:00 | Berger Straße 10         | Frankfurt   | NULL         | Germany        | 60316             |  0.99 |
+|         7 |         38 | 2009-02-01 00:00:00 | Barbarossastraße 19      | Berlin      | NULL         | Germany        | 10779             |  1.98 |
+|         8 |         40 | 2009-02-01 00:00:00 | 8, Rue Hanovre           | Paris       | NULL         | France         | 75002             |  1.98 |
+|         9 |         42 | 2009-02-02 00:00:00 | 9, Place Louis Barthou   | Bordeaux    | NULL         | France         | 33000             |  3.96 |
+|        10 |         46 | 2009-02-03 00:00:00 | 3 Chatham Street         | Dublin      | Dublin       | Ireland        | NULL              |  5.94 |
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_eleven.sql
++------------+---------------+---------------------+-------+
+| FirstName  | LastName      | InvoiceDate         | Total |
++------------+---------------+---------------------+-------+
+| Manoj      | Pareek        | 2013-12-22 00:00:00 |  1.99 |
+| Terhi      | Hämäläinen    | 2013-12-14 00:00:00 | 13.86 |
+| Madalena   | Sampaio       | 2013-12-09 00:00:00 |  8.91 |
+| Robert     | Brown         | 2013-12-06 00:00:00 |  5.94 |
+| Victor     | Stevens       | 2013-12-05 00:00:00 |  3.96 |
+| John       | Gordon        | 2013-12-04 00:00:00 |  1.98 |
+| Kathy      | Chase         | 2013-12-04 00:00:00 |  1.98 |
+| Dan        | Miller        | 2013-11-21 00:00:00 |  0.99 |
+| Helena     | Holý          | 2013-11-13 00:00:00 | 25.86 |
+| Diego      | Gutiérrez     | 2013-11-08 00:00:00 |  8.91 |
+| Enrique    | Muñoz         | 2013-11-05 00:00:00 |  5.94 |
+| Hugh       | O'Reilly      | 2013-11-04 00:00:00 |  3.96 |
+| Wyatt      | Girard        | 2013-11-03 00:00:00 |  1.98 |
+| Terhi      | Hämäläinen    | 2013-11-03 00:00:00 |  1.98 |
+| Marc       | Dubois        | 2013-10-21 00:00:00 |  0.99 |
+| Patrick    | Gray          | 2013-10-13 00:00:00 | 13.86 |
+| Michelle   | Brooks        | 2013-10-08 00:00:00 |  8.91 |
+| Roberto    | Almeida       | 2013-10-05 00:00:00 |  5.94 |
+| Daan       | Peeters       | 2013-10-04 00:00:00 |  3.96 |
+| Helena     | Holý          | 2013-10-03 00:00:00 |  1.98 |
+| Bjørn      | Hansen        | 2013-10-03 00:00:00 |  1.98 |
+| François   | Tremblay      | 2013-09-20 00:00:00 |  0.99 |
+| Johannes   | Van der Berg  | 2013-09-12 00:00:00 | 13.86 |
+| Camille    | Bernard       | 2013-09-07 00:00:00 |  8.91 |
+| Ellie      | Sullivan      | 2013-09-04 00:00:00 |  5.94 |
+| Robert     | Brown         | 2013-09-03 00:00:00 |  3.96 |
+| Victor     | Stevens       | 2013-09-02 00:00:00 |  1.98 |
+| Patrick    | Gray          | 2013-09-02 00:00:00 |  1.98 |
+| Frank      | Ralston       | 2013-08-20 00:00:00 |  0.99 |
+| Eduardo    | Martins       | 2013-08-12 00:00:00 | 13.86 |
+| Luís       | Gonçalves     | 2013-08-07 00:00:00 |  8.91 |
+| Steve      | Murray        | 2013-08-04 00:00:00 |  5.94 |
+| Enrique    | Muñoz         | 2013-08-03 00:00:00 |  3.96 |
+| Johannes   | Van der Berg  | 2013-08-02 00:00:00 |  1.98 |
+| Hugh       | O'Reilly      | 2013-08-02 00:00:00 |  1.98 |
+| Ladislav   | Kovács        | 2013-07-20 00:00:00 |  0.99 |
+| Martha     | Silk          | 2013-07-12 00:00:00 | 13.86 |
+| Heather    | Leacock       | 2013-07-07 00:00:00 |  8.91 |
+| Frank      | Harris        | 2013-07-04 00:00:00 |  5.94 |
+| Roberto    | Almeida       | 2013-07-03 00:00:00 |  3.96 |
+| Eduardo    | Martins       | 2013-07-02 00:00:00 |  1.98 |
+| Daan       | Peeters       | 2013-07-02 00:00:00 |  1.98 |
+| Astrid     | Gruber        | 2013-06-19 00:00:00 |  0.99 |
+| Emma       | Jones         | 2013-06-11 00:00:00 | 13.86 |
+| Isabelle   | Mercier       | 2013-06-06 00:00:00 |  8.91 |
+| Fynn       | Zimmermann    | 2013-06-03 00:00:00 |  5.94 |
+| Ellie      | Sullivan      | 2013-06-02 00:00:00 |  3.96 |
+| Robert     | Brown         | 2013-06-01 00:00:00 |  1.98 |
+| Martha     | Silk          | 2013-06-01 00:00:00 |  1.98 |
+| Julia      | Barnett       | 2013-05-19 00:00:00 |  0.99 |
+| Mark       | Philips       | 2013-05-11 00:00:00 | 13.86 |
+| František  | Wichterlová   | 2013-05-06 00:00:00 |  8.91 |
+| Manoj      | Pareek        | 2013-05-03 00:00:00 |  5.94 |
+| Steve      | Murray        | 2013-05-02 00:00:00 |  3.96 |
+| Emma       | Jones         | 2013-05-01 00:00:00 |  1.98 |
+| Enrique    | Muñoz         | 2013-05-01 00:00:00 |  1.98 |
+| Stanisław  | Wójcik        | 2013-04-18 00:00:00 |  0.99 |
+| Madalena   | Sampaio       | 2013-04-10 00:00:00 | 13.86 |
+| Richard    | Cunningham    | 2013-04-05 00:00:00 |  8.91 |
+| Dan        | Miller        | 2013-04-02 00:00:00 |  5.94 |
+| Frank      | Harris        | 2013-04-01 00:00:00 |  3.96 |
+| Roberto    | Almeida       | 2013-03-31 00:00:00 |  1.98 |
+| Mark       | Philips       | 2013-03-31 00:00:00 |  1.98 |
+| Alexandre  | Rocha         | 2013-03-18 00:00:00 |  0.99 |
+| Diego      | Gutiérrez     | 2013-03-10 00:00:00 | 13.86 |
+| Lucas      | Mancini       | 2013-03-05 00:00:00 |  8.91 |
+| Marc       | Dubois        | 2013-03-02 00:00:00 |  5.94 |
+| Fynn       | Zimmermann    | 2013-03-01 00:00:00 |  3.96 |
+| Ellie      | Sullivan      | 2013-02-28 00:00:00 |  1.98 |
+| Madalena   | Sampaio       | 2013-02-28 00:00:00 |  1.98 |
+| Aaron      | Mitchell      | 2013-02-15 00:00:00 |  0.99 |
+| Michelle   | Brooks        | 2013-02-07 00:00:00 | 13.86 |
+| Kara       | Nielsen       | 2013-02-02 00:00:00 |  8.91 |
+| François   | Tremblay      | 2013-01-30 00:00:00 |  5.94 |
+| Manoj      | Pareek        | 2013-01-29 00:00:00 |  3.96 |
+| Diego      | Gutiérrez     | 2013-01-28 00:00:00 |  1.98 |
+| Steve      | Murray        | 2013-01-28 00:00:00 |  1.98 |
+| Phil       | Hughes        | 2013-01-15 00:00:00 |  0.99 |
+| Camille    | Bernard       | 2013-01-07 00:00:00 | 13.86 |
+| Edward     | Francis       | 2013-01-02 00:00:00 |  8.91 |
+| Frank      | Ralston       | 2012-12-30 00:00:00 |  5.94 |
+| Dan        | Miller        | 2012-12-29 00:00:00 |  3.96 |
+| Frank      | Harris        | 2012-12-28 00:00:00 |  1.98 |
+| Michelle   | Brooks        | 2012-12-28 00:00:00 |  1.98 |
+| Jennifer   | Peterson      | 2012-12-15 00:00:00 |  0.99 |
+| Luís       | Gonçalves     | 2012-12-07 00:00:00 | 13.86 |
+| Joakim     | Johansson     | 2012-12-02 00:00:00 |  8.91 |
+| Ladislav   | Kovács        | 2012-11-29 00:00:00 |  5.94 |
+| Marc       | Dubois        | 2012-11-28 00:00:00 |  3.96 |
+| Camille    | Bernard       | 2012-11-27 00:00:00 |  1.98 |
+| Fynn       | Zimmermann    | 2012-11-27 00:00:00 |  1.98 |
+| Hannah     | Schneider     | 2012-11-14 00:00:00 |  0.99 |
+| Heather    | Leacock       | 2012-11-06 00:00:00 | 13.86 |
+| Fernanda   | Ramos         | 2012-11-01 00:00:00 |  8.91 |
+| Astrid     | Gruber        | 2012-10-29 00:00:00 |  5.94 |
+| François   | Tremblay      | 2012-10-28 00:00:00 |  3.96 |
+| Luís       | Gonçalves     | 2012-10-27 00:00:00 |  1.98 |
+| Manoj      | Pareek        | 2012-10-27 00:00:00 |  1.98 |
+| Luis       | Rojas         | 2012-10-14 00:00:00 |  0.99 |
+| Isabelle   | Mercier       | 2012-10-06 00:00:00 | 16.86 |
+| João       | Fernandes     | 2012-10-01 00:00:00 | 10.91 |
+| Julia      | Barnett       | 2012-09-28 00:00:00 | 11.94 |
+| Frank      | Ralston       | 2012-09-27 00:00:00 |  7.96 |
+| Dan        | Miller        | 2012-09-26 00:00:00 |  3.98 |
+| Heather    | Leacock       | 2012-09-26 00:00:00 |  3.98 |
+| Tim        | Goyer         | 2012-09-13 00:00:00 |  1.99 |
+| František  | Wichterlová   | 2012-09-05 00:00:00 | 16.86 |
+| Mark       | Taylor        | 2012-08-31 00:00:00 |  8.91 |
+| Stanisław  | Wójcik        | 2012-08-28 00:00:00 |  5.94 |
+| Ladislav   | Kovács        | 2012-08-27 00:00:00 |  3.96 |
+| Isabelle   | Mercier       | 2012-08-26 00:00:00 |  1.98 |
+| Marc       | Dubois        | 2012-08-26 00:00:00 |  1.98 |
+| Dominique  | Lefebvre      | 2012-08-13 00:00:00 |  0.99 |
+| Richard    | Cunningham    | 2012-08-05 00:00:00 | 23.86 |
+| Jack       | Smith         | 2012-07-31 00:00:00 | 10.91 |
+| Alexandre  | Rocha         | 2012-07-28 00:00:00 |  5.94 |
+| Astrid     | Gruber        | 2012-07-27 00:00:00 |  3.96 |
+| François   | Tremblay      | 2012-07-26 00:00:00 |  1.98 |
+| František  | Wichterlová   | 2012-07-26 00:00:00 |  1.98 |
+| Leonie     | Köhler        | 2012-07-13 00:00:00 |  0.99 |
+| Lucas      | Mancini       | 2012-07-05 00:00:00 | 13.86 |
+| Niklas     | Schröder      | 2012-06-30 00:00:00 |  8.91 |
+| Aaron      | Mitchell      | 2012-06-27 00:00:00 |  5.94 |
+| Julia      | Barnett       | 2012-06-26 00:00:00 |  3.96 |
+| Frank      | Ralston       | 2012-06-25 00:00:00 |  1.98 |
+| Richard    | Cunningham    | 2012-06-25 00:00:00 |  1.98 |
+| John       | Gordon        | 2012-06-12 00:00:00 |  0.99 |
+| Kara       | Nielsen       | 2012-06-04 00:00:00 | 13.86 |
+| Puja       | Srivastava    | 2012-05-30 00:00:00 |  8.91 |
+| Phil       | Hughes        | 2012-05-27 00:00:00 |  5.94 |
+| Stanisław  | Wójcik        | 2012-05-26 00:00:00 |  3.96 |
+| Lucas      | Mancini       | 2012-05-25 00:00:00 |  1.98 |
+| Ladislav   | Kovács        | 2012-05-25 00:00:00 |  1.98 |
+| Terhi      | Hämäläinen    | 2012-05-12 00:00:00 |  0.99 |
+| Edward     | Francis       | 2012-05-04 00:00:00 | 13.86 |
+| Kathy      | Chase         | 2012-04-29 00:00:00 |  8.91 |
+| Jennifer   | Peterson      | 2012-04-26 00:00:00 |  5.94 |
+| Alexandre  | Rocha         | 2012-04-25 00:00:00 |  3.96 |
+| Astrid     | Gruber        | 2012-04-24 00:00:00 |  1.98 |
+| Kara       | Nielsen       | 2012-04-24 00:00:00 |  1.98 |
+| Helena     | Holý          | 2012-04-11 00:00:00 |  0.99 |
+| Joakim     | Johansson     | 2012-04-03 00:00:00 | 13.86 |
+| Wyatt      | Girard        | 2012-03-29 00:00:00 |  8.91 |
+| Hannah     | Schneider     | 2012-03-26 00:00:00 |  5.94 |
+| Aaron      | Mitchell      | 2012-03-25 00:00:00 |  3.96 |
+| Edward     | Francis       | 2012-03-24 00:00:00 |  1.98 |
+| Julia      | Barnett       | 2012-03-24 00:00:00 |  1.98 |
+| Patrick    | Gray          | 2012-03-11 00:00:00 |  0.99 |
+| Fernanda   | Ramos         | 2012-03-03 00:00:00 | 13.86 |
+| Bjørn      | Hansen        | 2012-02-27 00:00:00 |  8.91 |
+| Luis       | Rojas         | 2012-02-24 00:00:00 |  5.94 |
+| Phil       | Hughes        | 2012-02-23 00:00:00 |  3.96 |
+| Joakim     | Johansson     | 2012-02-22 00:00:00 |  1.98 |
+| Stanisław  | Wójcik        | 2012-02-22 00:00:00 |  1.98 |
+| Johannes   | Van der Berg  | 2012-02-09 00:00:00 |  0.99 |
+| João       | Fernandes     | 2012-02-01 00:00:00 | 13.86 |
+| Victor     | Stevens       | 2012-01-27 00:00:00 |  8.91 |
+| Tim        | Goyer         | 2012-01-24 00:00:00 |  5.94 |
+| Jennifer   | Peterson      | 2012-01-23 00:00:00 |  3.96 |
+| Fernanda   | Ramos         | 2012-01-22 00:00:00 |  1.98 |
+| Alexandre  | Rocha         | 2012-01-22 00:00:00 |  1.98 |
+| Eduardo    | Martins       | 2012-01-09 00:00:00 |  0.99 |
+| Mark       | Taylor        | 2012-01-01 00:00:00 | 13.86 |
+| Hugh       | O'Reilly      | 2011-12-27 00:00:00 |  8.91 |
+| Dominique  | Lefebvre      | 2011-12-24 00:00:00 |  5.94 |
+| Hannah     | Schneider     | 2011-12-23 00:00:00 |  3.96 |
+| João       | Fernandes     | 2011-12-22 00:00:00 |  1.98 |
+| Aaron      | Mitchell      | 2011-12-22 00:00:00 |  1.98 |
+| Martha     | Silk          | 2011-12-09 00:00:00 |  0.99 |
+| Jack       | Smith         | 2011-12-01 00:00:00 | 13.86 |
+| Daan       | Peeters       | 2011-11-26 00:00:00 |  8.91 |
+| Leonie     | Köhler        | 2011-11-23 00:00:00 |  5.94 |
+| Luis       | Rojas         | 2011-11-22 00:00:00 |  3.96 |
+| Mark       | Taylor        | 2011-11-21 00:00:00 |  1.98 |
+| Phil       | Hughes        | 2011-11-21 00:00:00 |  1.98 |
+| Emma       | Jones         | 2011-11-08 00:00:00 |  0.99 |
+| Niklas     | Schröder      | 2011-10-31 00:00:00 | 13.86 |
+| Robert     | Brown         | 2011-10-26 00:00:00 |  8.91 |
+| John       | Gordon        | 2011-10-23 00:00:00 |  5.94 |
+| Tim        | Goyer         | 2011-10-22 00:00:00 |  3.96 |
+| Jack       | Smith         | 2011-10-21 00:00:00 |  1.98 |
+| Jennifer   | Peterson      | 2011-10-21 00:00:00 |  1.98 |
+| Mark       | Philips       | 2011-10-08 00:00:00 |  0.99 |
+| Puja       | Srivastava    | 2011-09-30 00:00:00 | 13.86 |
+| Enrique    | Muñoz         | 2011-09-25 00:00:00 |  8.91 |
+| Terhi      | Hämäläinen    | 2011-09-22 00:00:00 |  5.94 |
+| Dominique  | Lefebvre      | 2011-09-21 00:00:00 |  3.96 |
+| Niklas     | Schröder      | 2011-09-20 00:00:00 |  1.98 |
+| Hannah     | Schneider     | 2011-09-20 00:00:00 |  1.98 |
+| Madalena   | Sampaio       | 2011-09-07 00:00:00 |  0.99 |
+| Kathy      | Chase         | 2011-08-30 00:00:00 | 13.86 |
+| Roberto    | Almeida       | 2011-08-25 00:00:00 |  8.91 |
+| Helena     | Holý          | 2011-08-22 00:00:00 |  5.94 |
+| Leonie     | Köhler        | 2011-08-21 00:00:00 |  3.96 |
+| Puja       | Srivastava    | 2011-08-20 00:00:00 |  1.98 |
+| Luis       | Rojas         | 2011-08-20 00:00:00 |  1.98 |
+| Diego      | Gutiérrez     | 2011-08-07 00:00:00 |  0.99 |
+| Wyatt      | Girard        | 2011-07-30 00:00:00 | 13.86 |
+| Ellie      | Sullivan      | 2011-07-25 00:00:00 |  8.91 |
+| Patrick    | Gray          | 2011-07-22 00:00:00 |  5.94 |
+| John       | Gordon        | 2011-07-21 00:00:00 |  3.96 |
+| Kathy      | Chase         | 2011-07-20 00:00:00 |  1.98 |
+| Tim        | Goyer         | 2011-07-20 00:00:00 |  1.98 |
+| Michelle   | Brooks        | 2011-07-07 00:00:00 |  0.99 |
+| Bjørn      | Hansen        | 2011-06-29 00:00:00 | 15.86 |
+| Steve      | Murray        | 2011-06-24 00:00:00 |  8.91 |
+| Johannes   | Van der Berg  | 2011-06-21 00:00:00 |  8.94 |
+| Terhi      | Hämäläinen    | 2011-06-20 00:00:00 |  7.96 |
+| Wyatt      | Girard        | 2011-06-19 00:00:00 |  3.98 |
+| Dominique  | Lefebvre      | 2011-06-19 00:00:00 |  2.98 |
+| Camille    | Bernard       | 2011-06-06 00:00:00 |  1.99 |
+| Victor     | Stevens       | 2011-05-29 00:00:00 | 18.86 |
+| Frank      | Harris        | 2011-05-24 00:00:00 |  8.91 |
+| Eduardo    | Martins       | 2011-05-21 00:00:00 |  5.94 |
+| Helena     | Holý          | 2011-05-20 00:00:00 |  3.96 |
+| Bjørn      | Hansen        | 2011-05-19 00:00:00 |  1.98 |
+| Leonie     | Köhler        | 2011-05-19 00:00:00 |  1.98 |
+| Luís       | Gonçalves     | 2011-05-06 00:00:00 |  0.99 |
+| Hugh       | O'Reilly      | 2011-04-28 00:00:00 | 21.86 |
+| Fynn       | Zimmermann    | 2011-04-23 00:00:00 | 14.91 |
+| Martha     | Silk          | 2011-04-20 00:00:00 |  5.94 |
+| Patrick    | Gray          | 2011-04-19 00:00:00 |  3.96 |
+| Victor     | Stevens       | 2011-04-18 00:00:00 |  1.98 |
+| John       | Gordon        | 2011-04-18 00:00:00 |  1.98 |
+| Heather    | Leacock       | 2011-04-05 00:00:00 |  0.99 |
+| Daan       | Peeters       | 2011-03-28 00:00:00 | 13.86 |
+| Manoj      | Pareek        | 2011-03-23 00:00:00 |  8.91 |
+| Emma       | Jones         | 2011-03-20 00:00:00 |  5.94 |
+| Johannes   | Van der Berg  | 2011-03-19 00:00:00 |  3.96 |
+| Hugh       | O'Reilly      | 2011-03-18 00:00:00 |  1.98 |
+| Terhi      | Hämäläinen    | 2011-03-18 00:00:00 |  1.98 |
+| Isabelle   | Mercier       | 2011-03-05 00:00:00 |  0.99 |
+| Robert     | Brown         | 2011-02-25 00:00:00 | 13.86 |
+| Dan        | Miller        | 2011-02-20 00:00:00 |  8.91 |
+| Mark       | Philips       | 2011-02-17 00:00:00 |  5.94 |
+| Eduardo    | Martins       | 2011-02-16 00:00:00 |  3.96 |
+| Helena     | Holý          | 2011-02-15 00:00:00 |  1.98 |
+| Daan       | Peeters       | 2011-02-15 00:00:00 |  1.98 |
+| František  | Wichterlová   | 2011-02-02 00:00:00 |  0.99 |
+| Enrique    | Muñoz         | 2011-01-25 00:00:00 | 13.86 |
+| Marc       | Dubois        | 2011-01-20 00:00:00 |  8.91 |
+| Madalena   | Sampaio       | 2011-01-17 00:00:00 |  5.94 |
+| Martha     | Silk          | 2011-01-16 00:00:00 |  3.96 |
+| Robert     | Brown         | 2011-01-15 00:00:00 |  1.98 |
+| Patrick    | Gray          | 2011-01-15 00:00:00 |  1.98 |
+| Richard    | Cunningham    | 2011-01-02 00:00:00 |  0.99 |
+| Roberto    | Almeida       | 2010-12-25 00:00:00 | 13.86 |
+| François   | Tremblay      | 2010-12-20 00:00:00 |  8.91 |
+| Diego      | Gutiérrez     | 2010-12-17 00:00:00 |  5.94 |
+| Emma       | Jones         | 2010-12-16 00:00:00 |  3.96 |
+| Enrique    | Muñoz         | 2010-12-15 00:00:00 |  1.98 |
+| Johannes   | Van der Berg  | 2010-12-15 00:00:00 |  1.98 |
+| Lucas      | Mancini       | 2010-12-02 00:00:00 |  0.99 |
+| Ellie      | Sullivan      | 2010-11-24 00:00:00 | 13.86 |
+| Frank      | Ralston       | 2010-11-19 00:00:00 |  8.91 |
+| Michelle   | Brooks        | 2010-11-16 00:00:00 |  5.94 |
+| Mark       | Philips       | 2010-11-15 00:00:00 |  3.96 |
+| Roberto    | Almeida       | 2010-11-14 00:00:00 |  1.98 |
+| Eduardo    | Martins       | 2010-11-14 00:00:00 |  1.98 |
+| Kara       | Nielsen       | 2010-11-01 00:00:00 |  0.99 |
+| Steve      | Murray        | 2010-10-24 00:00:00 | 13.86 |
+| Ladislav   | Kovács        | 2010-10-19 00:00:00 |  8.91 |
+| Camille    | Bernard       | 2010-10-16 00:00:00 |  5.94 |
+| Madalena   | Sampaio       | 2010-10-15 00:00:00 |  3.96 |
+| Ellie      | Sullivan      | 2010-10-14 00:00:00 |  1.98 |
+| Martha     | Silk          | 2010-10-14 00:00:00 |  1.98 |
+| Edward     | Francis       | 2010-10-01 00:00:00 |  0.99 |
+| Frank      | Harris        | 2010-09-23 00:00:00 | 13.86 |
+| Astrid     | Gruber        | 2010-09-18 00:00:00 |  8.91 |
+| Luís       | Gonçalves     | 2010-09-15 00:00:00 |  5.94 |
+| Diego      | Gutiérrez     | 2010-09-14 00:00:00 |  3.96 |
+| Steve      | Murray        | 2010-09-13 00:00:00 |  1.98 |
+| Emma       | Jones         | 2010-09-13 00:00:00 |  1.98 |
+| Joakim     | Johansson     | 2010-08-31 00:00:00 |  0.99 |
+| Fynn       | Zimmermann    | 2010-08-23 00:00:00 | 13.86 |
+| Julia      | Barnett       | 2010-08-18 00:00:00 |  8.91 |
+| Heather    | Leacock       | 2010-08-15 00:00:00 |  5.94 |
+| Michelle   | Brooks        | 2010-08-14 00:00:00 |  3.96 |
+| Frank      | Harris        | 2010-08-13 00:00:00 |  1.98 |
+| Mark       | Philips       | 2010-08-13 00:00:00 |  1.98 |
+| Fernanda   | Ramos         | 2010-07-31 00:00:00 |  0.99 |
+| Manoj      | Pareek        | 2010-07-23 00:00:00 | 13.86 |
+| Stanisław  | Wójcik        | 2010-07-18 00:00:00 |  8.91 |
+| Isabelle   | Mercier       | 2010-07-15 00:00:00 |  5.94 |
+| Camille    | Bernard       | 2010-07-14 00:00:00 |  3.96 |
+| Fynn       | Zimmermann    | 2010-07-13 00:00:00 |  1.98 |
+| Madalena   | Sampaio       | 2010-07-13 00:00:00 |  1.98 |
+| João       | Fernandes     | 2010-06-30 00:00:00 |  0.99 |
+| Dan        | Miller        | 2010-06-22 00:00:00 | 13.86 |
+| Alexandre  | Rocha         | 2010-06-17 00:00:00 |  8.91 |
+| František  | Wichterlová   | 2010-06-14 00:00:00 |  5.94 |
+| Luís       | Gonçalves     | 2010-06-13 00:00:00 |  3.96 |
+| Manoj      | Pareek        | 2010-06-12 00:00:00 |  1.98 |
+| Diego      | Gutiérrez     | 2010-06-12 00:00:00 |  1.98 |
+| Mark       | Taylor        | 2010-05-30 00:00:00 |  0.99 |
+| Marc       | Dubois        | 2010-05-22 00:00:00 | 13.86 |
+| Aaron      | Mitchell      | 2010-05-17 00:00:00 |  8.91 |
+| Richard    | Cunningham    | 2010-05-14 00:00:00 |  5.94 |
+| Heather    | Leacock       | 2010-05-13 00:00:00 |  3.96 |
+| Dan        | Miller        | 2010-05-12 00:00:00 |  1.98 |
+| Michelle   | Brooks        | 2010-05-12 00:00:00 |  1.98 |
+| Jack       | Smith         | 2010-04-29 00:00:00 |  0.99 |
+| François   | Tremblay      | 2010-04-21 00:00:00 | 13.86 |
+| Phil       | Hughes        | 2010-04-16 00:00:00 |  8.91 |
+| Lucas      | Mancini       | 2010-04-13 00:00:00 |  5.94 |
+| Isabelle   | Mercier       | 2010-04-12 00:00:00 |  3.96 |
+| Marc       | Dubois        | 2010-04-11 00:00:00 |  1.98 |
+| Camille    | Bernard       | 2010-04-11 00:00:00 |  1.98 |
+| Niklas     | Schröder      | 2010-03-29 00:00:00 |  0.99 |
+| Frank      | Ralston       | 2010-03-21 00:00:00 | 15.86 |
+| Jennifer   | Peterson      | 2010-03-16 00:00:00 |  9.91 |
+| Kara       | Nielsen       | 2010-03-13 00:00:00 |  5.94 |
+| František  | Wichterlová   | 2010-03-12 00:00:00 |  3.96 |
+| François   | Tremblay      | 2010-03-11 00:00:00 |  3.98 |
+| Luís       | Gonçalves     | 2010-03-11 00:00:00 |  3.98 |
+| Puja       | Srivastava    | 2010-02-26 00:00:00 |  1.99 |
+| Ladislav   | Kovács        | 2010-02-18 00:00:00 | 21.86 |
+| Hannah     | Schneider     | 2010-02-13 00:00:00 |  8.91 |
+| Edward     | Francis       | 2010-02-10 00:00:00 |  5.94 |
+| Richard    | Cunningham    | 2010-02-09 00:00:00 |  3.96 |
+| Frank      | Ralston       | 2010-02-08 00:00:00 |  1.98 |
+| Heather    | Leacock       | 2010-02-08 00:00:00 |  1.98 |
+| Kathy      | Chase         | 2010-01-26 00:00:00 |  0.99 |
+| Astrid     | Gruber        | 2010-01-18 00:00:00 | 18.86 |
+| Luis       | Rojas         | 2010-01-13 00:00:00 | 17.91 |
+| Joakim     | Johansson     | 2010-01-10 00:00:00 |  6.94 |
+| Lucas      | Mancini       | 2010-01-09 00:00:00 |  3.96 |
+| Ladislav   | Kovács        | 2010-01-08 00:00:00 |  1.98 |
+| Isabelle   | Mercier       | 2010-01-08 00:00:00 |  1.98 |
+| Wyatt      | Girard        | 2009-12-26 00:00:00 |  0.99 |
+| Julia      | Barnett       | 2009-12-18 00:00:00 | 13.86 |
+| Tim        | Goyer         | 2009-12-13 00:00:00 |  8.91 |
+| Fernanda   | Ramos         | 2009-12-10 00:00:00 |  5.94 |
+| Kara       | Nielsen       | 2009-12-09 00:00:00 |  3.96 |
+| Astrid     | Gruber        | 2009-12-08 00:00:00 |  1.98 |
+| František  | Wichterlová   | 2009-12-08 00:00:00 |  1.98 |
+| Bjørn      | Hansen        | 2009-11-25 00:00:00 |  0.99 |
+| Stanisław  | Wójcik        | 2009-11-17 00:00:00 | 13.86 |
+| Dominique  | Lefebvre      | 2009-11-12 00:00:00 |  8.91 |
+| João       | Fernandes     | 2009-11-09 00:00:00 |  5.94 |
+| Edward     | Francis       | 2009-11-08 00:00:00 |  3.96 |
+| Julia      | Barnett       | 2009-11-07 00:00:00 |  1.98 |
+| Richard    | Cunningham    | 2009-11-07 00:00:00 |  1.98 |
+| Victor     | Stevens       | 2009-10-25 00:00:00 |  0.99 |
+| Alexandre  | Rocha         | 2009-10-17 00:00:00 | 13.86 |
+| Leonie     | Köhler        | 2009-10-12 00:00:00 |  8.91 |
+| Mark       | Taylor        | 2009-10-09 00:00:00 |  5.94 |
+| Joakim     | Johansson     | 2009-10-08 00:00:00 |  3.96 |
+| Stanisław  | Wójcik        | 2009-10-07 00:00:00 |  1.98 |
+| Lucas      | Mancini       | 2009-10-07 00:00:00 |  1.98 |
+| Hugh       | O'Reilly      | 2009-09-24 00:00:00 |  0.99 |
+| Aaron      | Mitchell      | 2009-09-16 00:00:00 | 13.86 |
+| John       | Gordon        | 2009-09-11 00:00:00 |  8.91 |
+| Jack       | Smith         | 2009-09-08 00:00:00 |  5.94 |
+| Fernanda   | Ramos         | 2009-09-07 00:00:00 |  3.96 |
+| Alexandre  | Rocha         | 2009-09-06 00:00:00 |  1.98 |
+| Kara       | Nielsen       | 2009-09-06 00:00:00 |  1.98 |
+| Daan       | Peeters       | 2009-08-24 00:00:00 |  0.99 |
+| Phil       | Hughes        | 2009-08-16 00:00:00 | 13.86 |
+| Terhi      | Hämäläinen    | 2009-08-11 00:00:00 |  8.91 |
+| Niklas     | Schröder      | 2009-08-08 00:00:00 |  5.94 |
+| João       | Fernandes     | 2009-08-07 00:00:00 |  3.96 |
+| Aaron      | Mitchell      | 2009-08-06 00:00:00 |  1.98 |
+| Edward     | Francis       | 2009-08-06 00:00:00 |  1.98 |
+| Robert     | Brown         | 2009-07-24 00:00:00 |  0.99 |
+| Jennifer   | Peterson      | 2009-07-16 00:00:00 | 13.86 |
+| Helena     | Holý          | 2009-07-11 00:00:00 |  8.91 |
+| Puja       | Srivastava    | 2009-07-08 00:00:00 |  5.94 |
+| Mark       | Taylor        | 2009-07-07 00:00:00 |  3.96 |
+| Phil       | Hughes        | 2009-07-06 00:00:00 |  1.98 |
+| Joakim     | Johansson     | 2009-07-06 00:00:00 |  1.98 |
+| Enrique    | Muñoz         | 2009-06-23 00:00:00 |  0.99 |
+| Hannah     | Schneider     | 2009-06-15 00:00:00 | 13.86 |
+| Patrick    | Gray          | 2009-06-10 00:00:00 |  8.91 |
+| Kathy      | Chase         | 2009-06-07 00:00:00 |  5.94 |
+| Jack       | Smith         | 2009-06-06 00:00:00 |  3.96 |
+| Jennifer   | Peterson      | 2009-06-05 00:00:00 |  1.98 |
+| Fernanda   | Ramos         | 2009-06-05 00:00:00 |  1.98 |
+| Roberto    | Almeida       | 2009-05-23 00:00:00 |  0.99 |
+| Luis       | Rojas         | 2009-05-15 00:00:00 | 13.86 |
+| Johannes   | Van der Berg  | 2009-05-10 00:00:00 |  8.91 |
+| Wyatt      | Girard        | 2009-05-07 00:00:00 |  5.94 |
+| Niklas     | Schröder      | 2009-05-06 00:00:00 |  3.96 |
+| Hannah     | Schneider     | 2009-05-05 00:00:00 |  1.98 |
+| João       | Fernandes     | 2009-05-05 00:00:00 |  1.98 |
+| Ellie      | Sullivan      | 2009-04-22 00:00:00 |  0.99 |
+| Tim        | Goyer         | 2009-04-14 00:00:00 | 13.86 |
+| Eduardo    | Martins       | 2009-04-09 00:00:00 |  8.91 |
+| Bjørn      | Hansen        | 2009-04-06 00:00:00 |  5.94 |
+| Puja       | Srivastava    | 2009-04-05 00:00:00 |  3.96 |
+| Luis       | Rojas         | 2009-04-04 00:00:00 |  1.98 |
+| Mark       | Taylor        | 2009-04-04 00:00:00 |  1.98 |
+| Steve      | Murray        | 2009-03-22 00:00:00 |  0.99 |
+| Dominique  | Lefebvre      | 2009-03-14 00:00:00 | 13.86 |
+| Martha     | Silk          | 2009-03-09 00:00:00 |  8.91 |
+| Victor     | Stevens       | 2009-03-06 00:00:00 |  5.94 |
+| Kathy      | Chase         | 2009-03-05 00:00:00 |  3.96 |
+| Tim        | Goyer         | 2009-03-04 00:00:00 |  1.98 |
+| Jack       | Smith         | 2009-03-04 00:00:00 |  1.98 |
+| Frank      | Harris        | 2009-02-19 00:00:00 |  0.99 |
+| Leonie     | Köhler        | 2009-02-11 00:00:00 | 13.86 |
+| Emma       | Jones         | 2009-02-06 00:00:00 |  8.91 |
+| Hugh       | O'Reilly      | 2009-02-03 00:00:00 |  5.94 |
+| Wyatt      | Girard        | 2009-02-02 00:00:00 |  3.96 |
+| Dominique  | Lefebvre      | 2009-02-01 00:00:00 |  1.98 |
+| Niklas     | Schröder      | 2009-02-01 00:00:00 |  1.98 |
+| Fynn       | Zimmermann    | 2009-01-19 00:00:00 |  0.99 |
+| John       | Gordon        | 2009-01-11 00:00:00 | 13.86 |
+| Mark       | Philips       | 2009-01-06 00:00:00 |  8.91 |
+| Daan       | Peeters       | 2009-01-03 00:00:00 |  5.94 |
+| Bjørn      | Hansen        | 2009-01-02 00:00:00 |  3.96 |
+| Leonie     | Köhler        | 2009-01-01 00:00:00 |  1.98 |
++------------+---------------+---------------------+-------+
+412 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_eleven.sql
++------------+--------------+---------------------+-------+
+| FirstName  | LastName     | InvoiceDate         | Total |
++------------+--------------+---------------------+-------+
+| Helena     | Holý         | 2013-11-13 00:00:00 | 25.86 |
+| Richard    | Cunningham   | 2012-08-05 00:00:00 | 23.86 |
+| Hugh       | O'Reilly     | 2011-04-28 00:00:00 | 21.86 |
+| Ladislav   | Kovács       | 2010-02-18 00:00:00 | 21.86 |
+| Victor     | Stevens      | 2011-05-29 00:00:00 | 18.86 |
+| Astrid     | Gruber       | 2010-01-18 00:00:00 | 18.86 |
+| Luis       | Rojas        | 2010-01-13 00:00:00 | 17.91 |
+| Isabelle   | Mercier      | 2012-10-06 00:00:00 | 16.86 |
+| František  | Wichterlová  | 2012-09-05 00:00:00 | 16.86 |
+| Bjørn      | Hansen       | 2011-06-29 00:00:00 | 15.86 |
++------------+--------------+---------------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> Select * from Employee Limit 5;
++------------+----------+-----------+---------------------+-----------+---------------------+---------------------+---------------------+----------+-------+---------+------------+-------------------+-------------------+--------------------------+
+| EmployeeId | LastName | FirstName | Title               | ReportsTo | BirthDate           | HireDate            | Address             | City     | State | Country | PostalCode | Phone             | Fax               | Email                    |
++------------+----------+-----------+---------------------+-----------+---------------------+---------------------+---------------------+----------+-------+---------+------------+-------------------+-------------------+--------------------------+
+|          1 | Adams    | Andrew    | General Manager     |      NULL | 1962-02-18 00:00:00 | 2002-08-14 00:00:00 | 11120 Jasper Ave NW | Edmonton | AB    | Canada  | T5K 2N1    | +1 (780) 428-9482 | +1 (780) 428-3457 | andrew@chinookcorp.com   |
+|          2 | Edwards  | Nancy     | Sales Manager       |         1 | 1958-12-08 00:00:00 | 2002-05-01 00:00:00 | 825 8 Ave SW        | Calgary  | AB    | Canada  | T2P 2T3    | +1 (403) 262-3443 | +1 (403) 262-3322 | nancy@chinookcorp.com    |
+|          3 | Peacock  | Jane      | Sales Support Agent |         2 | 1973-08-29 00:00:00 | 2002-04-01 00:00:00 | 1111 6 Ave SW       | Calgary  | AB    | Canada  | T2P 5M5    | +1 (403) 262-3443 | +1 (403) 262-6712 | jane@chinookcorp.com     |
+|          4 | Park     | Margaret  | Sales Support Agent |         2 | 1947-09-19 00:00:00 | 2003-05-03 00:00:00 | 683 10 Street SW    | Calgary  | AB    | Canada  | T2P 5G3    | +1 (403) 263-4423 | +1 (403) 263-4289 | margaret@chinookcorp.com |
+|          5 | Johnson  | Steve     | Sales Support Agent |         2 | 1965-03-03 00:00:00 | 2003-10-17 00:00:00 | 7727B 41 Ave        | Calgary  | AB    | Canada  | T3B 1Y7    | 1 (780) 836-9987  | 1 (780) 836-9543  | steve@chinookcorp.com    |
++------------+----------+-----------+---------------------+-----------+---------------------+---------------------+---------------------+----------+-------+---------+------------+-------------------+-------------------+--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_Chinook |
++-------------------+
+| Album             |
+| Artist            |
+| Customer          |
+| Employee          |
+| Genre             |
+| Invoice           |
+| InvoiceLine       |
+| MediaType         |
+| Playlist          |
+| PlaylistTrack     |
+| Track             |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> Select * from Customer Limit 5;
++------------+------------+--------------+---------------------------------------------------+---------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+| CustomerId | FirstName  | LastName     | Company                                           | Address                         | City                  | State | Country        | PostalCode | Phone              | Fax                | Email                    | SupportRepId |
++------------+------------+--------------+---------------------------------------------------+---------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+|          1 | Luís       | Gonçalves    | Embraer - Empresa Brasileira de Aeronáutica S.A.  | Av. Brigadeiro Faria Lima, 2170 | São José dos Campos   | SP    | Brazil         | 12227-000  | +55 (12) 3923-5555 | +55 (12) 3923-5566 | luisg@embraer.com.br     |            3 |
+|          2 | Leonie     | Köhler       | NULL                                              | Theodor-Heuss-Straße 34         | Stuttgart             | NULL  | Germany        | 70174      | +49 0711 2842222   | NULL               | leonekohler@surfeu.de    |            5 |
+|          3 | François   | Tremblay     | NULL                                              | 1498 rue Bélanger               | Montréal              | QC    | Canada         | H2G 1A7    | +1 (514) 721-4711  | NULL               | ftremblay@gmail.com      |            3 |
+|          4 | Bjørn      | Hansen       | NULL                                              | Ullevålsveien 14                | Oslo                  | NULL  | Norway         | 0171       | +47 22 44 22 22    | NULL               | bjorn.hansen@yahoo.no    |            4 |
+|          5 | František  | Wichterlová  | JetBrains s.r.o.                                  | Klanova 9/506                   | Prague                | NULL  | Czech Republic | 14700      | +420 2 4172 5555   | +420 2 4172 5555   | frantisekw@jetbrains.com |            4 |
++------------+------------+--------------+---------------------------------------------------+---------------------------------+-----------------------+-------+----------------+------------+--------------------+--------------------+--------------------------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> Select * from Invoice Limit 5;
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress           | BillingCity | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+|         1 |          2 | 2009-01-01 00:00:00 | Theodor-Heuss-Straße 34  | Stuttgart   | NULL         | Germany        | 70174             |  1.98 |
+|         2 |          4 | 2009-01-02 00:00:00 | Ullevålsveien 14         | Oslo        | NULL         | Norway         | 0171              |  3.96 |
+|         3 |          8 | 2009-01-03 00:00:00 | Grétrystraat 63          | Brussels    | NULL         | Belgium        | 1000              |  5.94 |
+|         4 |         14 | 2009-01-06 00:00:00 | 8210 111 ST NW           | Edmonton    | AB           | Canada         | T6G 2C7           |  8.91 |
+|         5 |         23 | 2009-01-11 00:00:00 | 69 Salem Street          | Boston      | MA           | USA            | 2113              | 13.86 |
++-----------+------------+---------------------+--------------------------+-------------+--------------+----------------+-------------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_twelve.sql
++----------+
+| count(*) |
++----------+
+|       20 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> source scripts/challenge_thirteen.sql
++----------+
+| count(*) |
++----------+
+|       21 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> Select * from MediaType Limit 5;
++-------------+-----------------------------+
+| MediaTypeId | Name                        |
++-------------+-----------------------------+
+|           1 | MPEG audio file             |
+|           2 | Protected AAC audio file    |
+|           3 | Protected MPEG-4 video file |
+|           4 | Purchased AAC audio file    |
+|           5 | AAC audio file              |
++-------------+-----------------------------+
+5 rows in set (0.01 sec)
+
+mysql> Select * from MediaType Limit 20;
++-------------+-----------------------------+
+| MediaTypeId | Name                        |
++-------------+-----------------------------+
+|           1 | MPEG audio file             |
+|           2 | Protected AAC audio file    |
+|           3 | Protected MPEG-4 video file |
+|           4 | Purchased AAC audio file    |
+|           5 | AAC audio file              |
++-------------+-----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> Select * from Album Limit 20;
++---------+--------------------------------------------------+----------+
+| AlbumId | Title                                            | ArtistId |
++---------+--------------------------------------------------+----------+
+|       1 | For Those About To Rock We Salute You            |        1 |
+|       2 | Balls to the Wall                                |        2 |
+|       3 | Restless and Wild                                |        2 |
+|       4 | Let There Be Rock                                |        1 |
+|       5 | Big Ones                                         |        3 |
+|       6 | Jagged Little Pill                               |        4 |
+|       7 | Facelift                                         |        5 |
+|       8 | Warner 25 Anos                                   |        6 |
+|       9 | Plays Metallica By Four Cellos                   |        7 |
+|      10 | Audioslave                                       |        8 |
+|      11 | Out Of Exile                                     |        8 |
+|      12 | BackBeat Soundtrack                              |        9 |
+|      13 | The Best Of Billy Cobham                         |       10 |
+|      14 | Alcohol Fueled Brewtality Live! [Disc 1]         |       11 |
+|      15 | Alcohol Fueled Brewtality Live! [Disc 2]         |       11 |
+|      16 | Black Sabbath                                    |       12 |
+|      17 | Black Sabbath Vol. 4 (Remaster)                  |       12 |
+|      18 | Body Count                                       |       13 |
+|      19 | Chemical Wedding                                 |       14 |
+|      20 | The Best Of Buddy Guy - The Millenium Collection |       15 |
++---------+--------------------------------------------------+----------+
+20 rows in set (0.00 sec)
+
+mysql> Select * from Track Limit 20;
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+| TrackId | Name                                    | AlbumId | MediaTypeId | GenreId | Composer                                                               | Milliseconds | Bytes    | UnitPrice |
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+|       1 | For Those About To Rock (We Salute You) |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       343719 | 11170334 |      0.99 |
+|       2 | Balls to the Wall                       |       2 |           2 |       1 | NULL                                                                   |       342562 |  5510424 |      0.99 |
+|       3 | Fast As a Shark                         |       3 |           2 |       1 | F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman                    |       230619 |  3990994 |      0.99 |
+|       4 | Restless and Wild                       |       3 |           2 |       1 | F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman |       252051 |  4331779 |      0.99 |
+|       5 | Princess of the Dawn                    |       3 |           2 |       1 | Deaffy & R.A. Smith-Diesel                                             |       375418 |  6290521 |      0.99 |
+|       6 | Put The Finger On You                   |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       205662 |  6713451 |      0.99 |
+|       7 | Let's Get It Up                         |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       233926 |  7636561 |      0.99 |
+|       8 | Inject The Venom                        |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       210834 |  6852860 |      0.99 |
+|       9 | Snowballed                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       203102 |  6599424 |      0.99 |
+|      10 | Evil Walks                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       263497 |  8611245 |      0.99 |
+|      11 | C.O.D.                                  |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       199836 |  6566314 |      0.99 |
+|      12 | Breaking The Rules                      |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       263288 |  8596840 |      0.99 |
+|      13 | Night Of The Long Knives                |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       205688 |  6706347 |      0.99 |
+|      14 | Spellbound                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       270863 |  8817038 |      0.99 |
+|      15 | Go Down                                 |       4 |           1 |       1 | AC/DC                                                                  |       331180 | 10847611 |      0.99 |
+|      16 | Dog Eat Dog                             |       4 |           1 |       1 | AC/DC                                                                  |       215196 |  7032162 |      0.99 |
+|      17 | Let There Be Rock                       |       4 |           1 |       1 | AC/DC                                                                  |       366654 | 12021261 |      0.99 |
+|      18 | Bad Boy Boogie                          |       4 |           1 |       1 | AC/DC                                                                  |       267728 |  8776140 |      0.99 |
+|      19 | Problem Child                           |       4 |           1 |       1 | AC/DC                                                                  |       325041 | 10617116 |      0.99 |
+|      20 | Overdose                                |       4 |           1 |       1 | AC/DC                                                                  |       369319 | 12066294 |      0.99 |
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+20 rows in set (0.00 sec)
+
+mysql> source scripts/challenge_fourteen.sql
++----------+
+| count(*) |
++----------+
+|     3503 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> source scripts/challenge_fourteen.sql
++-----------------------+
+| count(MediaType.Name) |
++-----------------------+
+|                  3503 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> source scripts/challenge_fourteen.sql
++-----------------+-------------------+
+| Name            | count(Track.Name) |
++-----------------+-------------------+
+| MPEG audio file |              3503 |
++-----------------+-------------------+
+1 row in set (0.00 sec)
+
+mysql> source scripts/challenge_fourteen.sql
++-----------------------------+-------------------+
+| Name                        | count(Track.Name) |
++-----------------------------+-------------------+
+| AAC audio file              |                11 |
+| MPEG audio file             |              3034 |
+| Protected AAC audio file    |               237 |
+| Protected MPEG-4 video file |               214 |
+| Purchased AAC audio file    |                 7 |
++-----------------------------+-------------------+
+5 rows in set (0.01 sec)
+
+mysql> source scripts/challenge_fourteen.sql
++-----------------------------+-------------------+
+| Name                        | count(Track.Name) |
++-----------------------------+-------------------+
+| MPEG audio file             |              3034 |
+| Protected AAC audio file    |               237 |
+| Protected MPEG-4 video file |               214 |
+| AAC audio file              |                11 |
+| Purchased AAC audio file    |                 7 |
++-----------------------------+-------------------+
+5 rows in set (0.00 sec)
+
+mysql> exit
