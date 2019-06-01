@@ -1,0 +1,18 @@
+﻿Challenge
+	
+
+- Run a command to create a new folder called codingLanguages in your workspace
+
+- Run a command to create a new file called html.txt in your workspace
+
+- Run a command to create a new file called css.txt in your workspace
+
+- Run a command to move the html.txt file from your workspace to your codingLanguages folder
+
+- Run a command to copy the css.txt file from your workspace to your codingLanguages folder
+
+- Delete your codingLanguages folder 
+
+
+If you have completed the challenge by running the correct commands, you should be left with a single file in your workspace called css.txt
+

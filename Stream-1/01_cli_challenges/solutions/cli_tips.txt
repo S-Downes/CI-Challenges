@@ -1,0 +1,15 @@
+Some tips for the command line!
+
+
+- Do not use spaces to create directories or files otherwise more than one file/directory will be created
+
+- Use cd ~ or cd ../../ or cd ~ / to get to the home directory
+
+- Use cp filename folder to copy filename to folder
+
+- Use mv filename folder to move filename to folder
+
+- Remove file using rm filename and rm -rf directory to remove directory
+
+
+- Don't forget to save this using CTRL X + Y in nano!

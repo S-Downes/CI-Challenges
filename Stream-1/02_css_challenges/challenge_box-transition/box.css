@@ -1,0 +1,15 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #3B5998;
+    color: #FFFFFF;
+    margin: 5px;
+    position: relative;
+    transition-property: position;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.box:hover {
+    left: 50px;
+}

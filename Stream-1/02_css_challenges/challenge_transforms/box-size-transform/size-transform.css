@@ -1,0 +1,11 @@
+.target {
+    width: 200px;
+    height: 200px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+}
+
+.target:hover {
+    margin: 150px;
+    transform: scale(2, 2);
+}

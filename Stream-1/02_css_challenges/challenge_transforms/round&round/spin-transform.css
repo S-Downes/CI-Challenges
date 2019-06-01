@@ -1,0 +1,22 @@
+.target {
+    width: 300px;
+    height: 300px;
+}
+
+.target:hover {
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+

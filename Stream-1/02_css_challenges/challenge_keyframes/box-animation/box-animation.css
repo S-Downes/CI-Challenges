@@ -1,0 +1,22 @@
+.target {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.target:hover {
+    animation-name: to-circle;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+}
+
+@keyframes to-circle {
+    from {
+        border-radius: 0%;
+    }
+    
+    to {
+        border-radius: 50%;
+    }
+}
