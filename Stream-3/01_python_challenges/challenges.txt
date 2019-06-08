@@ -1,4 +1,4 @@
-Challenge 1
+﻿Challenge 1
 
 1.	Modify one of the asserts to make it fail.
 2.	Add more tests until you are confident that the code is correct.
@@ -65,7 +65,7 @@ Challenge 6 (See boggle-solver project)
 
 ________________________________________________________________________
 
-Challenge 7 (See flask project)
+Challenge 7 (See company-of-dwarves project)
     
     Ensure the content is present for all of the following:
 
